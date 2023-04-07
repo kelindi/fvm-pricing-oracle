@@ -2,17 +2,6 @@ import subprocess
 import sys
 from web3 import Web3
 
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-# Install required packages
-required_packages = ['web3']
-for package in required_packages:
-    try:
-        __import__(package)
-    except ImportError:
-        install(package)
-
 # Change this to use your own RPC URL
 web3 = Web3(Web3.HTTPProvider('https://polygon-rpc.com'))
 # AggregatorV3Interface ABI
